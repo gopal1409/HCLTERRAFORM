@@ -1,5 +1,5 @@
 resource "aws_security_group" "webserver_sg" {
-    ingress {
+     ingress {
         from_port = var.server_port
         to_port = var.server_port
         protocol = "tcp"

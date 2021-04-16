@@ -1,6 +1,6 @@
 variable "location" {
     description = "it will define the aws region"
-    type = "string"
+    type = string
 }
 variable "server_port" {
     default = "80"

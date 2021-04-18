@@ -2,7 +2,7 @@ resource "aws_launch_configuration" "my-first-launch-conf" {
    name = "webserver-launch"
    image_id = var.ami 
    instance_type = var.instance_type 
-   vpc_security_group_ids = ["${aws_security_group.webserver_sg.id}"]
+   security_groups = ["${aws_security_group.webserver_sg.id}"]
    key_name =  "terraform"
    user_data = <<EOF
 #!/bin/bash -xe
@@ -15,7 +15,4 @@ DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get upgrade -yq
 instance_ip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
 echo $instance_ip >>/var/www/html/index.html
 EOF
-   tags = {
-       Name = "gopalinstance-${count.index}"
-   }
 }

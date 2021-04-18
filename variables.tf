@@ -17,7 +17,7 @@ variable "my_public_ip" {
 }
 
 variable "ami" {
-    default = "ami-ami-013f17f36f8b1fefb"
+    default = "ami-013f17f36f8b1fefb"
 }
 
 variable "azs" {
